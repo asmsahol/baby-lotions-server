@@ -74,7 +74,6 @@ async function run() {
     // Post to API
     app.post("/users", async (req, res) => {
       const result = await usersCollection.insertOne(req.body);
-      console.log(users);
       res.json(result);
     });
 
@@ -107,7 +106,6 @@ async function run() {
       const updateDoc = { $set: { role: "admin" } };
       const result = await usersCollection.updateOne(filter, updateDoc);
       res.json(result);
-      console.log(result);
     });
 
     app.post("/booking", async (req, res) => {
@@ -120,9 +118,7 @@ async function run() {
     app.put("/updateStatus/:id", async (req, res) => {
       const id = req.params.id;
       const updatedStatus = req.body.status;
-      console.log(updatedStatus);
       const filter = { _id: ObjectId(id) };
-      console.log(updatedStatus);
       const result = await bookingCollection
         .updateOne(filter, {
           $set: { status: updatedStatus },
@@ -151,7 +147,6 @@ async function run() {
         updateDoc,
         options
       );
-      console.log("Updating", req);
       res.json(result);
     });
 
@@ -168,7 +163,6 @@ async function run() {
       const query = { _id: ObjectId(id) };
       const result = await productsCollection.deleteOne(query);
       res.json(result);
-      console.log(result);
     });
   } finally {
     // await client.close();
@@ -177,7 +171,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("The server in running.");
+  res.send("Baby Lotion server in running.");
 });
 
 app.listen(port, () => {

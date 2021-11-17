@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# This is Server Site od Baby Lotion Website
+# This is Server Site of Baby Lotion Website
 
-This is Travel Website. The Site Name "Baby Lotion" The Live Site Link is "https://bd-travel-c4f84.web.app/".
+This is Baby Lotion Website. The Site Name "Baby Lotion" The Live Site Link is "https://baby-lotion-6f8f3.web.app/".
 
 ## Best Baby Lotion
 
